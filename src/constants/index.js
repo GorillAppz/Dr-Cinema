@@ -1,0 +1,9 @@
+export const GET_TOKEN = 'GET_TOKEN';
+
+export const GET_CINEMAS = 'GET_CINEMAS';
+
+export const GET_CINEMA_DETAIL = 'GET_CINEMA_DETAIL';
+
+export const GET_MOVIE_DETAIL = 'GET_MOVIE_DETAIL';
+
+export const GET_UPCOMING_MOVIES = 'GET_UPCOMING_MOVIES';
