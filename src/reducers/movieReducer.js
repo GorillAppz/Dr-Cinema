@@ -1,6 +1,6 @@
 import * as constants from '../constants';
 
-const initState = {};
+const initState = { isLoading: false, error: null, data: {} };
 
 export default (state = initState, action) => {
 	const { payload, type } = action;
