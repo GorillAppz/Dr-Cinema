@@ -34,6 +34,9 @@ const MainNavigator = createStackNavigator(
 					android: { fontFamily: 'Roboto' }
 				})
 			}
+		},
+		cardStyle: {
+			backgroundColor: BLACK
 		}
 	}
 );

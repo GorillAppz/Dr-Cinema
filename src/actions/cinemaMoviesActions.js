@@ -3,18 +3,18 @@ import config from '../../config';
 import * as constants from '../constants';
 
 const getAllCinemaMoviesLoad = () => ({
-	type: constants.GET_CINEMAS
+	type: constants.GET_CINEMA_MOVIES
 });
 
 const getAllCinemaMoviesSuccess = (data) => ({
-	type: constants.GET_CINEMAS_SUCCESS,
+	type: constants.GET_CINEMA_MOVIES_SUCCESS,
 	payload: {
 		data
 	}
 });
 
 const getAllCinemaMoviesFail = () => ({
-	type: constants.GET_CINEMAS_FAIL
+	type: constants.GET_CINEMA_MOVIES_FAIL
 });
 
 export const getAllCinemaMovies = (cinemaId) => (dispatch, getState) => {
@@ -23,7 +23,7 @@ export const getAllCinemaMovies = (cinemaId) => (dispatch, getState) => {
 		url: `${config.url}/movies`,
 		method: 'GET',
 		headers: {
-			'X-ACCESS-TOKEN': getState().token
+			'X-ACCESS-TOKEN': getState().token.data
 		}
 	}).then((res) => {
 		const moviesByCinemaId = res.data.filter(
@@ -36,7 +36,7 @@ export const getAllCinemaMovies = (cinemaId) => (dispatch, getState) => {
 		}));
 
 		dispatch(getAllCinemaMoviesSuccess(moviesWithOnlySelectedCinemaShowTimes));
-	}).catch(() => {
+	}).catch((err) => {
 		dispatch(getAllCinemaMoviesFail());
 	});
 };

@@ -20,7 +20,7 @@ const CinemaList = ({ cinemas }) => {
 };
 
 const mapStateToProps = (state) => ({
-	cinemas: state.cinemas
+	cinemas: state.cinemas.data
 });
 
 export default connect(mapStateToProps)(CinemaList);

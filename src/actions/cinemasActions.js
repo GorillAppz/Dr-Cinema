@@ -23,7 +23,7 @@ export const getAllCinemas = () => (dispatch, getState) => {
 		url: `${config.url}/theaters`,
 		method: 'GET',
 		headers: {
-			'X-ACCESS-TOKEN': getState().token
+			'X-ACCESS-TOKEN': getState().token.data
 		}
 	}).then((res) => {
 		dispatch(getAllCinemasSuccess(res.data));
