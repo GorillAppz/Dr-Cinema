@@ -4,8 +4,10 @@ import { ScrollView, FlatList } from 'react-native-gesture-handler';
 
 import CinemaListItem from '../CinemaListItem';
 import styles from './styles';
+import { cinemasType } from '../../types';
 
 const CinemaList = ({ cinemas }) => {
+	console.log(cinemas);
 	return (
 		<ScrollView style={styles.container}>
 			<FlatList
@@ -17,6 +19,10 @@ const CinemaList = ({ cinemas }) => {
 			/>
 		</ScrollView>
 	);
+};
+
+CinemaList.propTypes = {
+	cinemas: cinemasType.isRequired
 };
 
 const mapStateToProps = (state) => ({

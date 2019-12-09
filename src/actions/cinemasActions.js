@@ -10,7 +10,6 @@ const getAllCinemasSuccess = (data) => ({
 });
 
 export const getAllCinemas = () => (dispatch, getState) => {
-	console.log(getState().token);
 	return axios({
 		url: `${config.url}/theaters`,
 		method: 'GET',

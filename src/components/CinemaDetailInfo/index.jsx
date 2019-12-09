@@ -4,7 +4,6 @@ import { View } from 'react-native';
 import Text from '../Text';
 
 const CinemaDetailInfo = ({ cinema }) => {
-	console.log(cinema);
 	return (
 		<View>
 			<Text>
