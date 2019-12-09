@@ -5,6 +5,7 @@ export default StyleSheet.create({
 		...Platform.select({
 			ios: { fontFamily: 'Helvetica Neue' },
 			android: { fontFamily: 'Roboto' }
-		})
+		}),
+		color: 'white'
 	}
 });

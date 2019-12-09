@@ -4,7 +4,7 @@ import TouchableScale from 'react-native-touchable-scale';
 import { withNavigation } from 'react-navigation';
 
 import styles from './styles';
-import { BLACK, DARK_GRAY } from '../../styles/colors';
+import { BLACK, GRAY } from '../../styles/colors';
 
 const CinemaListItem = ({ cinema, navigation: { navigate } }) => {
 	const clickHandler = () => {
@@ -20,7 +20,7 @@ const CinemaListItem = ({ cinema, navigation: { navigate } }) => {
 			tension={100}
 			activeScale={0.95}
 			linearGradientProps={{
-				colors: [DARK_GRAY, BLACK],
+				colors: [GRAY, BLACK],
 				start: [1, 0],
 				end: [0.2, 0]
 			}}
