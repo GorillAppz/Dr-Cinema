@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getAccessToken } from '../../actions/tokenActions';
 
 import Text from '../../components/Text';
+import Footer from '../../components/Footer';
 
 const Main = ({ token, getAccessToken, navigation: { navigate } }) => {
 	React.useEffect(() => {
@@ -14,7 +15,7 @@ const Main = ({ token, getAccessToken, navigation: { navigate } }) => {
 	return (
 		<View>
 			<Button
-				title={token}
+				title="Cinemas"
 				onPress={() => navigate('Cinemas')}
 			/>
 		</View>
