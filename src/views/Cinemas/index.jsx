@@ -3,30 +3,30 @@ import { View } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 
-import Text from '../../components/Text';
-
 import { getAllCinemas } from '../../actions/cinemasActions';
+import CinemaList from '../../components/CinemaList';
 
 const Cinemas = ({ getAllCinemas, cinemas }) => {
-
 	const handleViewFocus = () => {
 		getAllCinemas();
-	}
+	};
 
 	return (
 		<View>
 			<NavigationEvents
 				onWillFocus={() => handleViewFocus()}
 			/>
-			<Text>
-				{JSON.stringify(cinemas, null, 2)}
-			</Text>
+			<CinemaList />
 		</View>
 	);
 };
 
+Cinemas.navigationOptions = {
+	title: 'Kvikmyndahús'
+};
+
 const mapStateToProps = (state) => ({
 	cinemas: state.cinemas
-})
+});
 
 export default connect(mapStateToProps, { getAllCinemas })(Cinemas);
