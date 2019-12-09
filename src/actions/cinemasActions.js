@@ -18,10 +18,7 @@ const getAllCinemasFail = () => ({
 });
 
 export const getAllCinemas = () => (dispatch, getState) => {
-<<<<<<< HEAD
-=======
 	dispatch(getAllCinemasLoad());
->>>>>>> f5c6e2c981d75c9eadb4e9926886d3edfe9054e2
 	return axios({
 		url: `${config.url}/theaters`,
 		method: 'GET',
