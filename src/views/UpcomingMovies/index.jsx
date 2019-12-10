@@ -8,17 +8,17 @@ import styles from './styles';
 
 const UpcomingMovies = ({ getAllUpcomingMovies, upcomingMovies, isLoading }) => {
 	React.useEffect(() => {
-		const movies = getAllUpcomingMovies();
-		console.log(movies);
+		getAllUpcomingMovies();
 	}, []);
+	console.log(upcomingMovies);
 
 	return (
 		<View style={styles.container}>
-			{
+			{/* {
 				isLoading
 					? <ActivityIndicator size="large" />
 					: <MovieList />
-			}
+			} */}
 		</View>
 	);
 };
