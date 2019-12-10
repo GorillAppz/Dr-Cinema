@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import CinemaDetailInfo from '../../components/CinemaDetailInfo';
-import MovieList from '../../components/MovieList';
 
 import Text from '../../components/Text';
 import styles from './styles';
@@ -28,9 +27,8 @@ const CinemaDetail = ({ navigation }) => {
 	);
 };
 
-CinemaDetail.navigationOptions = ({ navigation }) => ({
-	title: navigation.state.params.cinema.name,
-	titleStyle: { textAlign: 'center' }
-});
+// CinemaDetail.navigationOptions = ({ navigation }) => ({
+// 	title: navigation.state.params.cinema.name
+// });
 
 export default CinemaDetail;

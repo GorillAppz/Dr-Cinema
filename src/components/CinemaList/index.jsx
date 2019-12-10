@@ -30,7 +30,6 @@ const CinemaList = () => {
 						({ item }) => <CinemaListItem cinema={item} />
 					}
 					keyExtractor={(item) => `${item.id}_${item.name}`}
-					style={styles.container}
 				/>
 			)
 	);

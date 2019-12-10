@@ -33,6 +33,7 @@ const MovieListItem = ({ title, poster, releaseDate, genres, empty, showTrailerB
 								containerStyle={styles.trailerButtonContainer}
 								disabled={hasTrailer}
 								title="Trailer"
+								onPress={onPressHandler}
 							/>
 						) : null
 				}

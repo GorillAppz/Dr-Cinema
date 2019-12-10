@@ -7,7 +7,10 @@ import styles from './styles';
 const UpcomingMovies = () => {
 
 	return (
-		<ScrollView contentContainerStyle={styles.scrollViewContentContainer} style={styles.scrollView}>
+		<ScrollView
+			contentContainerStyle={styles.scrollViewContentContainer}
+			style={styles.scrollView}
+		>
 			<UpcomingMovieList />
 		</ScrollView>
 	);
