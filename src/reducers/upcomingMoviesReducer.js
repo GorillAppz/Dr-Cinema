@@ -7,7 +7,15 @@ export default (state = initState, action) => {
 
 	switch (type) {
 		case constants.GET_UPCOMING_MOVIES: {
-			return payload.movies;
+			return { ...initState, isLoading: true };
+		}
+		case constants.GET_UPCOMING_MOVIES_SUCCESS: {
+			const dataSortedDescendingDate = payload.data.sort((a, b) => a.name.localeCompare(b.name));
+			console.log(dataSortedDescendingDate);
+			return { isLoading: false, error: null, data: dataSortedDescendingDate };
+		}
+		case constants.GET_UPCOMING_MOVIES_FAIL: {
+			return { ...initState, error: payload.error };
 		}
 		default:
 			return state;

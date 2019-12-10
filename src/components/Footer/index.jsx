@@ -15,7 +15,7 @@ const Footer = ({ navigationHandler }) => (
 			titleStyle={styles.title}
 		/>
 		<Button
-			onPress={() => navigationHandler('Cinemas')}
+			onPress={() => navigationHandler('UpcomingMovies')}
 			icon={<Icon type="font-awesome" name="film" size={15} color="white" />}
 			title="Væntanlegt"
 			buttonStyle={styles.button}

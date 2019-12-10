@@ -1,14 +1,31 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import { connect } from 'react-redux';
 
-import Text from '../../components/Text';
+import { getAllUpcomingMovies } from '../../actions/upcomingMoviesActions';
+import MovieList from '../../components/MovieList/index';
+import styles from './styles';
 
-const UpcomingMovies = () => (
-	<View>
-		<Text>
-			UpcomingMovies
-		</Text>
-	</View>
-);
+const UpcomingMovies = ({ getAllUpcomingMovies, upcomingMovies, isLoading }) => {
+	React.useEffect(() => {
+		const movies = getAllUpcomingMovies();
+		console.log(movies);
+	}, []);
 
-export default UpcomingMovies;
+	return (
+		<View style={styles.container}>
+			{
+				isLoading
+					? <ActivityIndicator size="large" />
+					: <MovieList />
+			}
+		</View>
+	);
+};
+
+const mapStateToProps = (state) => ({
+	upcomingMovies: state.upcomingMovies.data,
+	isLoading: state.upcomingMovies.isLoading
+});
+
+export default connect(mapStateToProps, { getAllUpcomingMovies })(UpcomingMovies);
