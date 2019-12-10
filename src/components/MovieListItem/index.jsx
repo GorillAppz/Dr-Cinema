@@ -7,12 +7,12 @@ import styles from './styles';
 import { TouchableOpacity } from 'react-native';
 import { View } from 'react-native';
 
-const MovieListItem = ({ title, poster, year, genres, empty, showTrailerButton, hasTrailer, onPressHandler }) => (
-	<TouchableOpacity style={{ flex: 1 }} onPress={onPressHandler}>
+const MovieListItem = ({ title, poster, releaseDate, genres, empty, showTrailerButton, hasTrailer, onPressHandler }) => (
+	<TouchableOpacity style={styles.container} onPress={onPressHandler}>
 		<Card
 			featuredTitle={title}
 			featuredTitleStyle={styles.featureTitle}
-			featuredSubtitle={year}
+			featuredSubtitle={releaseDate}
 			image={{ uri: poster }}
 			containerStyle={[styles.card, empty ? styles.empty : null]}
 			imageStyle={styles.cardImage}
@@ -26,12 +26,13 @@ const MovieListItem = ({ title, poster, year, genres, empty, showTrailerButton, 
 					{genres && genres.map((x, i) => (i !== genres.length - 1 ? x.Name + ', ' : x.Name))}
 				</Text>
 				{
-					!showTrailerButton
+					showTrailerButton
 						? (
 							<Button
+								type="outline"
 								containerStyle={styles.trailerButtonContainer}
 								disabled={hasTrailer}
-								title="Sjá kerru"
+								title="Trailer"
 							/>
 						) : null
 				}

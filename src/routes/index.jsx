@@ -31,7 +31,6 @@ const MainNavigator = createStackNavigator(
 			headerTitleStyle: {
 				color: 'white',
 				fontWeight: 'bold',
-				alignSelf: 'center',
 				fontFamily: 'Roboto',
 				...Platform.select({
 					ios: { fontFamily: 'Helvetica Neue' },
@@ -39,6 +38,7 @@ const MainNavigator = createStackNavigator(
 				})
 			}
 		},
+		headerLayoutPreset: 'center',
 		cardStyle: {
 			backgroundColor: BLACK
 		}

@@ -11,7 +11,8 @@ export default StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	descriptionText: {
-		fontStyle: 'italic'
+		fontStyle: 'italic',
+		marginBottom: 20
 	},
 	linkText: {
 		color: BLUE,

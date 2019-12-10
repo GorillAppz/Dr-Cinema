@@ -29,7 +29,8 @@ const CinemaDetail = ({ navigation }) => {
 };
 
 CinemaDetail.navigationOptions = ({ navigation }) => ({
-	title: navigation.state.params.cinema.name
+	title: navigation.state.params.cinema.name,
+	titleStyle: { textAlign: 'center' }
 });
 
 export default CinemaDetail;

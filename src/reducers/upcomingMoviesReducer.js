@@ -10,8 +10,7 @@ export default (state = initState, action) => {
 			return { ...initState, isLoading: true };
 		}
 		case constants.GET_UPCOMING_MOVIES_SUCCESS: {
-			const dataSortedDescendingDate = payload.data.sort((a, b) => a['release-dateIS'].localeCompare(b['release-dateIS']));
-			console.log(dataSortedDescendingDate);
+			const dataSortedDescendingDate = payload.data.sort((a, b) => (-1 * a['release-dateIS'].localeCompare(b['release-dateIS'])));
 			return { isLoading: false, error: null, data: dataSortedDescendingDate };
 		}
 		case constants.GET_UPCOMING_MOVIES_FAIL: {

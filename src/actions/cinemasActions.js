@@ -2,6 +2,8 @@ import axios from 'axios';
 import config from '../../config';
 import * as constants from '../constants';
 
+const parseHtml = (string) => (string.replace(/<br>/g, '\n').replace(/<b>/, '').trim());
+
 const getAllCinemasLoad = () => ({
 	type: constants.GET_CINEMAS
 });
@@ -26,7 +28,11 @@ export const getAllCinemas = () => (dispatch, getState) => {
 			'X-ACCESS-TOKEN': getState().token.data
 		}
 	}).then((res) => {
-		dispatch(getAllCinemasSuccess(res.data));
+		const cinemasWithParsedDescriptions = res.data.map((cinema) => ({
+			...cinema,
+			description: cinema.description ? parseHtml(cinema.description) : null
+		}));
+		dispatch(getAllCinemasSuccess(cinemasWithParsedDescriptions));
 	}).catch(() => {
 		dispatch(getAllCinemasFail());
 	});

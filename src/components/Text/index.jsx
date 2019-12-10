@@ -5,25 +5,14 @@ import styles from './styles';
 import { nodeType, oneOfTypeType, objectType, arrayType } from '../../types/index';
 
 
-const CustomText = ({ children, style, isHTML, ...props }) => {
-	const commonStyle = { ...styles.text, ...style };
+const CustomText = ({ children, style, ...props }) => {
 
 	return (
-		isHTML
-			? (
-				<HTML
-					{...props}
-					baseFontStyle={commonStyle}
-					html={children}
-				/>
-			)
-			: (
-				<Text {...props} style={commonStyle}>
-					{children}
-				</Text>
-			)
+		<Text {...props} style={{ ...styles.text, ...style }}>
+			{children}
+		</Text>
 	);
-}
+};
 
 CustomText.propTypes = {
 	children: nodeType,

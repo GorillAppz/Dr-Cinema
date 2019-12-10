@@ -1,47 +1,43 @@
 import React from 'react';
-import { View, FlatList, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import moment from 'moment';
+import 'moment/locale/is';
 
 import MovieListItem from '../MovieListItem';
+import EmptyMovies from '../EmptyMovies';
 
 import styles from './styles';
 
 
-const MovieList = ({ movies, isLoading, onItemPressHandler }) => {
-	const formatData = (data, numColumns) => {
-		const numFullRows = Math.floor(data.length / numColumns);
-		let numElementsLastRow = data.length - (numFullRows * numColumns);
-		while (numElementsLastRow !== numColumns && numElementsLastRow !== 0) {
-			data.push({ key: `blank-${numElementsLastRow}`, empty: true });
-			numElementsLastRow += 1;
-		}
-		return data;
-	};
+const formatDate = (date) => {
+	moment.locale('is');
+	return moment(date).format('ll');
+};
+
+
+const MovieList = ({ movies, isLoading, onItemPressHandler, showTrailerButton, showReleaseDate }) => {
 
 	return (
 		<View style={styles.container}>
 			{
 				isLoading ? <ActivityIndicator size="large" />
 					: (
-						<FlatList
-							data={formatData(movies, 2)}
-							renderItem={({ item }) => {
-								if (item.empty) {
-									return <MovieListItem empty />;
-								}
-								return (
+						<View style={styles.itemsContainer}>
+							{
+								movies.length ? movies.map((movie) => (
 									<MovieListItem
-										title={item.title}
-										poster={item.poster}
-										year={item.year}
-										genres={item.genres}
-										onPressHandler={() => onItemPressHandler(item)}
+										key={`${movie.id}_${movie.name}`}
+										title={movie.title}
+										poster={movie.poster}
+										releaseDate={showReleaseDate ? formatDate(movie['release-dateIS']) : movie.year}
+										genres={movie.genres}
+										showTrailerButton={showTrailerButton}
+										onPressHandler={() => onItemPressHandler(movie)}
 									/>
-								);
-							}}
-							keyExtractor={(item) => `${item.id}_${item.title}`}
-							numColumns={2}
-							style={styles.flatlistContainer}
-						/>
+								))
+									: <EmptyMovies />
+							}
+						</View>
 					)
 			}
 		</View>

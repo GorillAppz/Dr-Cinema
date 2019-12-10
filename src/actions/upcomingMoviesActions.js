@@ -28,6 +28,7 @@ export const getAllUpcomingMovies = () => (dispatch, getState) => {
 	}).then((res) => {
 		dispatch(getAllUpcomingMoviesSuccess(res.data));
 	}).catch((err) => {
+		console.log(err);
 		dispatch(getAllUpcomingMoviesFail());
 	});
 };

@@ -7,5 +7,11 @@ export default StyleSheet.create({
 	},
 	flatlistContainer: {
 		flex: 1
+	},
+	itemsContainer: {
+		flex: 1,
+		display: 'flex',
+		flexWrap: 'wrap',
+		flexDirection: 'row'
 	}
 });
