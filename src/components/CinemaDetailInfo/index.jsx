@@ -8,7 +8,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Linking } from 'expo';
 
 const CinemaDetailInfo = ({ cinema }) => {
-	console.log("description:", cinema.description);
 	return (
 		<Card containerStyle={styles.card}>
 			<Text h4 style={styles.boldText}>

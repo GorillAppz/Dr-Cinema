@@ -3,14 +3,14 @@ import { DARK_GRAY, BLACK } from '../../styles/colors';
 
 export default StyleSheet.create({
 	container: {
-		flex: 1,
+		flex: 1
 	},
 	card: {
 		backgroundColor: BLACK,
 		borderWidth: 0,
-		borderRadius: 5,
 		overflow: 'hidden',
-		marginTop: 5,
+		flex: 1,
+		marginTop: 5
 	},
 	featureTitle: {
 		paddingHorizontal: 10,
@@ -25,11 +25,27 @@ export default StyleSheet.create({
 	cardImagePropStyle: {
 		borderRadius: 10
 	},
+	cardBottomArea: {
+		borderWidth: 10,
+		display: 'flex',
+		flex: 1
+	},
 	text: {
 		color: 'white',
-		fontSize: 12
+		fontSize: 12,
+		flexGrow: 1
 	},
 	empty: {
 		opacity: 0
+	},
+	cardWrapper: {
+		flex: 1
+	},
+	cardImageWrapper: {
+		flex: 1
+	},
+	trailerButtonContainer: {
+		alignSelf: 'flex-end',
+		width: '100%'
 	}
 });

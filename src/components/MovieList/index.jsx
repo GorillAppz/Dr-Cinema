@@ -1,20 +1,12 @@
 import React from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
-import { connect } from 'react-redux';
 
-import Text from '../Text';
-
-import { getAllCinemaMovies } from '../../actions/cinemaMoviesActions';
 import MovieListItem from '../MovieListItem';
 
 import styles from './styles';
 
 
-const MovieList = ({ cinemaId, getAllCinemaMovies, movies, isLoading }) => {
-	React.useEffect(() => {
-		getAllCinemaMovies(cinemaId);
-	}, [cinemaId]);
-
+const MovieList = ({ movies, isLoading, onItemPressHandler }) => {
 	const formatData = (data, numColumns) => {
 		const numFullRows = Math.floor(data.length / numColumns);
 		let numElementsLastRow = data.length - (numFullRows * numColumns);
@@ -42,6 +34,7 @@ const MovieList = ({ cinemaId, getAllCinemaMovies, movies, isLoading }) => {
 										poster={item.poster}
 										year={item.year}
 										genres={item.genres}
+										onPressHandler={() => onItemPressHandler(item)}
 									/>
 								);
 							}}
@@ -55,9 +48,4 @@ const MovieList = ({ cinemaId, getAllCinemaMovies, movies, isLoading }) => {
 	);
 };
 
-const mapStateToProps = (state) => ({
-	movies: state.cinemaMovies.data,
-	isLoading: state.cinemaMovies.isLoading
-});
-
-export default connect(mapStateToProps, { getAllCinemaMovies })(MovieList);
+export default MovieList;

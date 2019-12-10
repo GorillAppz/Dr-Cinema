@@ -4,10 +4,12 @@ import CinemaDetailInfo from '../../components/CinemaDetailInfo';
 import MovieList from '../../components/MovieList';
 
 import Text from '../../components/Text';
-import styles from './styles'
+import styles from './styles';
+import CinemaMovieList from '../../components/CinemaMovieList';
 
 const CinemaDetail = ({ navigation }) => {
 	const { cinema } = navigation.state.params;
+
 	return (
 		<ScrollView
 			contentContainerStyle={styles.scrollViewContentContainer}
@@ -21,7 +23,7 @@ const CinemaDetail = ({ navigation }) => {
 					Í sýningu
 				</Text>
 			</View>
-			<MovieList cinemaId={cinema.id} />
+			<CinemaMovieList cinemaId={cinema.id} />
 		</ScrollView>
 	);
 };

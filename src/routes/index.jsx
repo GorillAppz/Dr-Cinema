@@ -6,6 +6,7 @@ import Main from '../views/Main';
 import Cinemas from '../views/Cinemas';
 import { BLACK } from '../styles/colors';
 import CinemaDetail from '../views/CinemaDetail/index';
+import Movie from '../views/Movie';
 import UpcomingMovies from '../views/UpcomingMovies/index';
 
 
@@ -14,7 +15,8 @@ const MainNavigator = createStackNavigator(
 		Main: { screen: Main },
 		Cinemas: { screen: Cinemas },
 		CinemaDetail: { screen: CinemaDetail },
-		UpcomingMovies: { screen: UpcomingMovies }
+		UpcomingMovies: { screen: UpcomingMovies },
+		Movie: { screen: Movie }
 	},
 	{
 		initialRouteName: 'Main',
