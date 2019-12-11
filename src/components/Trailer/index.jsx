@@ -6,9 +6,9 @@ import styles from './styles';
 const Trailer = ({ trailerKey }) => {
 	console.log(trailerKey);
 	return (
-	<WebView
-		source={{ uri: `https://www.youtube.com/watch?v=${trailerKey}` }}
-	/>
+		<WebView
+			source={{ uri: `https://www.youtube.com/watch?v=${trailerKey}` }}
+		/>
 	);
 };
 

@@ -9,47 +9,33 @@ import { View } from 'react-native';
 import Trailer from '../Trailer';
 import TrailerButton from '../TrailerButton';
 
-const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, showTrailerButton, hasTrailer, trailerKey }) => {
-	const [isPlaying, setIsPlaying] = React.useState(false);
-	const trainerHandler = () => {
-		setIsPlaying(true);
-	};
-	return (
-		<View style={styles.container}>
-			<TouchableOpacity style={styles.touchContainer} onPress={onPressHandler}>
-				<Card
-					featuredTitle={title}
-					featuredTitleStyle={styles.featureTitle}
-					featuredSubtitle={releaseDate}
-					image={{ uri: poster }}
-					containerStyle={styles.card}
-					imageStyle={styles.cardImage}
-					imageProps={{ ...styles.cardImagePropStyle }}
-					imageWrapperStyle={styles.cardImageWrapper}
-					wrapperStyle={styles.cardWrapper}
-				>
-					<View style={{ flex: 1, alignContent: 'stretch' }}>
+const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, showTrailerButton, hasTrailer, trailerKey }) => (
+	<View style={styles.container}>
+		<TouchableOpacity style={styles.touchContainer} onPress={onPressHandler}>
+			<Card
+				featuredTitle={title}
+				featuredTitleStyle={styles.featureTitle}
+				featuredSubtitle={releaseDate}
+				image={{ uri: poster }}
+				containerStyle={styles.card}
+				imageStyle={styles.cardImage}
+				imageProps={{ ...styles.cardImagePropStyle }}
+				imageWrapperStyle={styles.cardImageWrapper}
+				wrapperStyle={styles.cardWrapper}
+			>
+				<View style={{ flex: 1, alignContent: 'stretch' }}>
 
-						<Text style={styles.text}>
-							{genres && genres.map((x, i) => {
-								if (x.Name !== undefined) {
-									return (i !== genres.length - 1 ? x.Name + ', ' : x.Name)
-								}
-							})}
-						</Text>
-					</View>
-				</Card>
-
-			</TouchableOpacity>
-			{
-				showTrailerButton
-					? (
-						<TrailerButton setIsPlayingCallback={trainerHandler} />
-					) : null
-			}
-			{isPlaying ? <Trailer trailerKey={trailerKey} /> : null}
-		</View>
-	);
-};
+					<Text style={styles.text}>
+						{genres && genres.map((x, i) => {
+							if (x.Name !== undefined) {
+								return (i !== genres.length - 1 ? x.Name + ', ' : x.Name)
+							}
+						})}
+					</Text>
+				</View>
+			</Card>
+		</TouchableOpacity>
+	</View>
+);
 
 export default MovieListItem;

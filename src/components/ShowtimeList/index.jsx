@@ -24,7 +24,7 @@ const ShowtimeList = ({ showtimes }) => {
 				{icon}
 			</View>
 			<Text h6>
-				Smeltu til þess að kaupa miða
+				Smelltu til þess að kaupa miða
 			</Text>
 			<View style={styles.showtimesContainer}>
 				{

@@ -5,6 +5,7 @@ import MovieDetailHeader from '../MovieDetailHeader';
 import styles from './styles';
 import MovieDetailBody from '../MovieDetailBody';
 import ShowtimeList from '../ShowtimeList';
+import TrailerList from '../TrailerList';
 
 
 const MovieDetailContainer = ({ movie }) => {
@@ -23,11 +24,15 @@ const MovieDetailContainer = ({ movie }) => {
 				actors={movie.actors_abridged}
 				directors={movie.directors_abridged}
 			/>
-			{movie.showtimes
+			{ movie.showtimes
 				? (
 					<ShowtimeList showtimes={movie.showtimes} />
-				) : null
-			}
+				) : null }
+
+			{ movie.trailers.length > 0 && movie.trailers[0].results.length > 0
+				? (
+					<TrailerList trailers={movie.trailers} />
+				) : null }
 		</View>
 	);
 };
