@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Text from '../Text';
 import { ORANGE } from '../../styles/colors';
 import styles from './styles';
+import ShowtimeListItem from '../ShowtimeListItem';
 
-const ShowtimeList = () => {
+const ShowtimeList = ({ showtimes }) => {
 	const icon = (
 		<Icon
 			name="ticket-alt"
@@ -19,8 +20,22 @@ const ShowtimeList = () => {
 		<View style={styles.container}>
 			<View style={styles.titleContainer}>
 				{icon}
-				<Text h3 style={styles.title}>Sýningatímar</Text>
+				<Text h4 style={styles.title}>Sýningatímar</Text>
 				{icon}
+			</View>
+			<Text h6>
+				Smelltu val möguleikar til að kaupa miða!
+			</Text>
+			<View style={styles.showtimesContainer}>
+				{
+					showtimes.map((st) => (
+						<ShowtimeListItem
+							key={st.time}
+							time={st.time}
+							url={st.purchase_url}
+						/>
+					))
+				}
 			</View>
 		</View>
 	);

@@ -24,7 +24,7 @@ const MovieDetailHeader = ({ poster, title, altTitle, year, duration, genres }) 
 						<Text style={styles.info}>
 							{genres.map((g, i) => (i < genres.length - 1 ? `${g.Name}    ` : g.Name))}
 						</Text>
-						<Text h1 style={styles.title}>{title}</Text>
+						<Text h3 style={styles.title}>{title}</Text>
 						{
 							altTitle
 								? <Text style={styles.altTitle}>({altTitle})</Text>

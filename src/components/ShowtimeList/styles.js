@@ -5,7 +5,7 @@ export default StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		marginTop: 20
+		marginVertical: 20,
 	},
 	title: {
 		textAlign: 'center',
@@ -16,5 +16,11 @@ export default StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		alignItems: 'center'
+	},
+	showtimesContainer: {
+		flex: 1,
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		justifyContent: 'space-evenly'
 	}
 });

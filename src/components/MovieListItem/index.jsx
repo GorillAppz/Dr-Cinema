@@ -9,10 +9,8 @@ import { View } from 'react-native';
 import Trailer from '../Trailer';
 import TrailerButton from '../TrailerButton';
 
-const MovieListItem = ({ title, poster, releaseDate, genres, empty, showTrailerButton, hasTrailer, trailerKey }) => {
+const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, showTrailerButton, hasTrailer, trailerKey }) => {
 	const [isPlaying, setIsPlaying] = React.useState(false);
-	const onPressHandler = () => {
-	};
 	const trainerHandler = () => {
 		setIsPlaying(true);
 	};
@@ -24,7 +22,7 @@ const MovieListItem = ({ title, poster, releaseDate, genres, empty, showTrailerB
 					featuredTitleStyle={styles.featureTitle}
 					featuredSubtitle={releaseDate}
 					image={{ uri: poster }}
-					containerStyle={[styles.card, empty ? styles.empty : null]}
+					containerStyle={styles.card}
 					imageStyle={styles.cardImage}
 					imageProps={{ ...styles.cardImagePropStyle }}
 					imageWrapperStyle={styles.cardImageWrapper}
@@ -33,7 +31,11 @@ const MovieListItem = ({ title, poster, releaseDate, genres, empty, showTrailerB
 					<View style={{ flex: 1, alignContent: 'stretch' }}>
 
 						<Text style={styles.text}>
-							{genres && genres.map((x, i) => (i !== genres.length - 1 ? x.Name + ', ' : x.Name))}
+							{genres && genres.map((x, i) => {
+								if (x.Name !== undefined) {
+									return (i !== genres.length - 1 ? x.Name + ', ' : x.Name)
+								}
+							})}
 						</Text>
 					</View>
 				</Card>
