@@ -5,7 +5,6 @@ export default StyleSheet.create({
 	container: {
 		backgroundColor: BLACK,
 		height: 65,
-		display: 'flex',
 		justifyContent: 'center'
 	},
 	body: {
