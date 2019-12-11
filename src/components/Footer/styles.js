@@ -13,7 +13,6 @@ export default StyleSheet.create({
 	button: {
 		flexDirection: 'column',
 		height: 40,
-		width: 80,
 		backgroundColor: BLACK
 	},
 	title: {

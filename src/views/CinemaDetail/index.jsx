@@ -27,8 +27,8 @@ const CinemaDetail = ({ navigation }) => {
 	);
 };
 
-// CinemaDetail.navigationOptions = ({ navigation }) => ({
-// 	title: navigation.state.params.cinema.name
-// });
+CinemaDetail.navigationOptions = ({ navigation }) => ({
+	title: navigation.state.params.cinema.name
+});
 
 export default CinemaDetail;

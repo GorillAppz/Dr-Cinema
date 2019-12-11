@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllUpcomingMovies } from '../../actions/upcomingMoviesActions';
-
+import { withNavigation } from 'react-navigation';
 import MovieList from '../MovieList';
 
-const UpcomingMovieList = () => {
+const UpcomingMovieList = ({ navigation: { navigate } }) => {
 	const dispatch = useDispatch();
 	const movies = useSelector((state) => state.upcomingMovies.data);
 	const isLoading = useSelector((state) => state.upcomingMovies.isLoading);
@@ -13,11 +13,11 @@ const UpcomingMovieList = () => {
 		dispatch(getAllUpcomingMovies());
 	}, [dispatch]);
 
-	const movieItemPressHandler = () => console.log('movie pressed!');
+	const movieItemPressHandler = (movie) => navigate('Movie', { movie });
 
 	return (
-		<MovieList movies={movies} isLoading={isLoading} onItemPressHandler={movieItemPressHandler} showTrailerButton showReleaseDate />
+		<MovieList movies={movies} isLoading={isLoading} hideShowtimes onItemPressHandler={movieItemPressHandler} showTrailerButton showReleaseDate />
 	);
 };
 
-export default UpcomingMovieList;
+export default withNavigation(UpcomingMovieList);

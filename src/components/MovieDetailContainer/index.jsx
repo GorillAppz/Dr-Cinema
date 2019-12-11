@@ -23,7 +23,11 @@ const MovieDetailContainer = ({ movie }) => {
 				actors={movie.actors_abridged}
 				directors={movie.directors_abridged}
 			/>
-			<ShowtimeList showtimes={movie.showtimes} />
+			{movie.showtimes
+				? (
+					<ShowtimeList showtimes={movie.showtimes} />
+				) : null
+			}
 		</View>
 	);
 };
