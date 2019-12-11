@@ -6,8 +6,6 @@ import Text from '../Text';
 import styles from './styles';
 import { TouchableOpacity } from 'react-native';
 import { View } from 'react-native';
-import Trailer from '../Trailer';
-import TrailerButton from '../TrailerButton';
 
 const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, showTrailerButton, hasTrailer, trailerKey }) => (
 	<View style={styles.container}>

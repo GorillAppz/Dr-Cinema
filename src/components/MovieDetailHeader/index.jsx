@@ -38,7 +38,7 @@ const MovieDetailHeader = ({ poster, title, altTitle, year, duration, genres }) 
 				style={styles.image}
 				resizeMode="cover"
 			>
-				<LinearGradient colors={['transparent', BLACK]} style={styles.linearGradient} end={[0.5, 0.97]}>
+				<LinearGradient colors={['transparent', BLACK]} style={styles.linearGradient} start={[0.5, 0]} end={[0.5, 0.97]}>
 					<View style={styles.textContainer}>
 						{genresText}
 						<Text h3 style={styles.title}>{title}</Text>

@@ -8,6 +8,7 @@ import styles from './styles';
 const TrailerListItem = ({ trailer }) => (
 	<View style={styles.trailerContainer}>
 		<WebView
+			allowsFullscreenVideo
 			source={{ uri: `https://www.youtube.com/embed/${trailer.key}` }}
 		/>
 	</View>
