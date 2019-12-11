@@ -15,8 +15,7 @@ const formatDate = (date) => {
 };
 
 
-const MovieList = ({ movies, isLoading, onItemPressHandler, showTrailerButton, showReleaseDate }) => {
-
+const MovieList = ({ movies, isLoading, onItemPressHandler, showReleaseDate }) => {
 	return (
 		<View style={styles.container}>
 			{
@@ -31,7 +30,10 @@ const MovieList = ({ movies, isLoading, onItemPressHandler, showTrailerButton, s
 										poster={movie.poster}
 										releaseDate={showReleaseDate ? formatDate(movie['release-dateIS']) : movie.year}
 										genres={movie.genres}
-										showTrailerButton={showTrailerButton}
+										trailerKey={movie.trailers.length > 0 && movie.trailers[0].results.length > 0
+											? movie.trailers[0].results[0].key
+											: 'https://www.example.com'}
+										showTrailerButton={movie.trailers !== undefined}
 										onPressHandler={() => onItemPressHandler(movie)}
 									/>
 								))

@@ -3,7 +3,12 @@ import { DARK_GRAY, BLACK } from '../../styles/colors';
 
 export default StyleSheet.create({
 	container: {
+		display: 'flex',
 		width: '50%'
+	},
+	touchContainer: {
+		width: '100%',
+		height: 310
 	},
 	card: {
 		backgroundColor: BLACK,
@@ -46,11 +51,5 @@ export default StyleSheet.create({
 	},
 	cardImageWrapper: {
 		flex: 1
-	},
-	trailerButtonContainer: {
-		alignSelf: 'flex-end',
-		width: '100%',
-		marginTop: 5,
-		marginBottom: 20
 	}
 });
