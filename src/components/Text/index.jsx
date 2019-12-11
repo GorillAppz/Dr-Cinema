@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text } from 'react-native-elements';
-import HTML from 'react-native-render-html';
 import styles from './styles';
 import { nodeType, oneOfTypeType, objectType, arrayType } from '../../types/index';
 
