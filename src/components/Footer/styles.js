@@ -3,16 +3,18 @@ import { BLACK } from '../../styles/colors';
 
 export default StyleSheet.create({
 	container: {
+		backgroundColor: BLACK,
+		height: 65,
+		display: 'flex',
+		justifyContent: 'center'
+	},
+	body: {
 		display: 'flex',
 		flexDirection: 'row',
-		justifyContent: 'space-around',
-		backgroundColor: BLACK,
-		paddingBottom: 25,
-		paddingTop: 10
+		justifyContent: 'space-around'
 	},
 	button: {
 		flexDirection: 'column',
-		height: 40,
 		backgroundColor: BLACK
 	},
 	title: {
