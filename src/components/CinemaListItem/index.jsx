@@ -1,12 +1,14 @@
 import React from 'react';
 import { ListItem } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
-import { withNavigation } from 'react-navigation';
+import { useNavigation } from 'react-navigation-hooks';
 
 import styles from './styles';
 import { BLACK, GRAY } from '../../styles/colors';
 
-const CinemaListItem = ({ cinema, navigation: { navigate } }) => {
+const CinemaListItem = ({ cinema }) => {
+	const { navigate } = useNavigation();
+
 	const clickHandler = () => {
 		navigate('CinemaDetail', { cinema });
 	};
@@ -33,4 +35,4 @@ const CinemaListItem = ({ cinema, navigation: { navigate } }) => {
 	);
 };
 
-export default withNavigation(CinemaListItem);
+export default CinemaListItem;
