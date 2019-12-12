@@ -9,6 +9,7 @@ const TrailerListItem = ({ trailer }) => (
 	<View style={styles.trailerContainer}>
 		<WebView
 			allowsFullscreenVideo
+			scrollEnabled={false}
 			source={{ uri: `https://www.youtube.com/embed/${trailer.key}` }}
 		/>
 	</View>

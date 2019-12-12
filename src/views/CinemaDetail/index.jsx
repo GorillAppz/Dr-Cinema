@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { useNavigationState } from 'react-navigation-hooks';
+import * as Animatable from 'react-native-animatable';
+
 import CinemaDetailInfo from '../../components/CinemaDetailInfo';
 
 import Text from '../../components/Text';
@@ -18,11 +20,15 @@ const CinemaDetail = () => {
 			styles={styles.scrollView}
 		>
 			<CinemaDetailInfo cinema={cinema} />
-			<View style={styles.nowShowingTextContainer}>
+			<Animatable.View
+				style={styles.nowShowingTextContainer}
+				useNativeDriver
+				animation="fadeIn"
+			>
 				<Text h4 style={styles.nowShowingText}>
 					Í sýningu
 				</Text>
-			</View>
+			</Animatable.View>
 			<CinemaMovieList cinemaId={cinema.id} />
 		</ScrollView>
 	);

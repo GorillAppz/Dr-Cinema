@@ -1,13 +1,20 @@
 import React from 'react';
 import { Card } from 'react-native-elements';
 import { TouchableOpacity, View } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+
 
 import Text from '../Text';
 import styles from './styles';
 import { stringType, funcType, genresType } from '../../types/index';
 
-const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) => (
-	<View style={styles.container}>
+const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, index }) => (
+	<Animatable.View
+		style={styles.container}
+		animation="fadeInUp"
+		delay={75 * index}
+		useNativeDriver
+	>
 		<TouchableOpacity style={styles.touchContainer} onPress={onPressHandler}>
 			<Card
 				featuredTitle={title}
@@ -35,7 +42,7 @@ const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) =
 				</View>
 			</Card>
 		</TouchableOpacity>
-	</View>
+	</Animatable.View>
 );
 
 MovieListItem.propTypes = {

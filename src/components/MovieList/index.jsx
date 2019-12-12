@@ -20,7 +20,7 @@ const MovieList = ({ movies, isLoading, onItemPressHandler, showReleaseDate }) =
 			: (
 				<View style={styles.itemsContainer}>
 					{
-						movies.length ? movies.map((movie) => (
+						movies.length ? movies.map((movie, index) => (
 							<MovieListItem
 								key={`${movie.id}_${movie.name}`}
 								title={movie.title}
@@ -28,6 +28,7 @@ const MovieList = ({ movies, isLoading, onItemPressHandler, showReleaseDate }) =
 								releaseDate={showReleaseDate ? formatDate(movie['release-dateIS']) : movie.year}
 								genres={movie.genres}
 								onPressHandler={() => onItemPressHandler(movie)}
+								index={index}
 							/>
 						))
 							: <EmptyMovies />

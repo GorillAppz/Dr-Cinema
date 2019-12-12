@@ -10,7 +10,7 @@ const CinemaList = () => {
 		<FlatList
 			data={cinemas}
 			renderItem={
-				({ item }) => <CinemaListItem cinema={item} />
+				({ item, index }) => <CinemaListItem cinema={item} index={index} />
 			}
 			keyExtractor={(item) => `${item.id}_${item.name}`}
 		/>

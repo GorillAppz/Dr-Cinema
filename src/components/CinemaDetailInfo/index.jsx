@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-native-elements';
 import { Linking } from 'expo';
+import * as Animatable from 'react-native-animatable';
 
 import CinemaDetailInfoLink from '../CinemaDetailInfoLink';
 import Text from '../Text';
@@ -43,15 +44,20 @@ const CinemaDetailInfo = ({ cinema }) => {
 	) : null;
 
 	return (
-		<Card containerStyle={styles.card}>
-			<Text h4 style={styles.boldText}>
-				{cinema.name}
-			</Text>
-			{descriptionText}
-			{addressText}
-			{phoneText}
-			{websiteText}
-		</Card>
+		<Animatable.View
+			animation="fadeInDown"
+			useNativeDriver
+		>
+			<Card containerStyle={styles.card}>
+				<Text h4 style={styles.boldText}>
+					{cinema.name}
+				</Text>
+				{descriptionText}
+				{addressText}
+				{phoneText}
+				{websiteText}
+			</Card>
+		</Animatable.View>
 	);
 };
 

@@ -2,6 +2,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Platform } from 'react-native';
+import { fadeIn } from 'react-navigation-transitions';
 
 import Main from '../views/Main';
 import Cinemas from '../views/Cinemas';
@@ -32,7 +33,8 @@ const commonStackOptions = {
 	headerLayoutPreset: 'center',
 	cardStyle: {
 		backgroundColor: BLACK
-	}
+	},
+	transitionConfig: () => fadeIn()
 };
 
 
