@@ -1,19 +1,20 @@
 import React from 'react';
+import { useNavigation } from 'react-navigation-hooks';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllCinemaMovies } from '../../actions/cinemaMoviesActions';
+
+import { getMoviesByCinemaId } from '../../actions/cinemaMoviesActions';
 import MovieList from '../MovieList';
-import { useNavigation } from 'react-navigation-hooks'
 
 
 const CinemaMovieList = ({ cinemaId }) => {
 	const dispatch = useDispatch();
+	React.useEffect(() => {
+		dispatch(getMoviesByCinemaId(cinemaId));
+	}, [dispatch, cinemaId]);
+
+	const { navigate } = useNavigation();
 	const movies = useSelector((state) => state.cinemaMovies.data);
 	const isLoading = useSelector((state) => state.cinemaMovies.isLoading);
-	const { navigate } = useNavigation();
-
-	React.useEffect(() => {
-		dispatch(getAllCinemaMovies(cinemaId));
-	}, [dispatch, cinemaId]);
 
 	const movieItemPressHandler = (movie) => navigate('Movie', { movie });
 

@@ -1,11 +1,20 @@
 import React from 'react';
 import { View } from 'react-native';
+import moment from 'moment';
+import 'moment/locale/is';
+
 import Text from '../Text';
 import styles from './styles';
 
+const formatDate = (date) => {
+	moment.locale('is');
+	return moment(date).format('ll');
+};
+
+
 const parsePlot = (plot) => (plot.replace(/\n/g, ' '));
 
-const MovieDetailBody = ({ plot, actors, directors }) => {
+const MovieDetailBody = ({ plot, actors, directors, releaseDate }) => {
 
 	const plotText = plot ? (
 		<Text h5 style={styles.plot}>
@@ -27,8 +36,15 @@ const MovieDetailBody = ({ plot, actors, directors }) => {
 		</Text>
 	) : null;
 
+	const releaseDateText = releaseDate ? (
+		<Text style={styles.releaseDate}>
+			{`(Frumsýnd ${formatDate(releaseDate)})`}
+		</Text>
+	) : null;
+
 	return (
 		<View style={styles.container}>
+			{releaseDateText}
 			{plotText}
 			{actorsText}
 			{directorsText}

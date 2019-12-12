@@ -9,7 +9,8 @@ export default StyleSheet.create({
 		flexGrow: 1
 	},
 	nowShowingTextContainer: {
-		paddingVertical: 10,
+		marginTop: 20,
+		paddingBottom: 10,
 		backgroundColor: BLACK,
 		marginBottom: 0
 	},

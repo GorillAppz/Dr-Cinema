@@ -25,7 +25,13 @@ export default StyleSheet.create({
 		fontSize: 14,
 		marginBottom: 10
 	},
-	durationContainer: {
+	iconAndText: {
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginHorizontal: 5
+	},
+	durationAndRatingContainer: {
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -12,6 +12,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 export default function App() {
 	return (
 		<Provider store={store}>
+			<StatusBar barStyle="light-content" />
 			<AppContainer />
 		</Provider>
 	);

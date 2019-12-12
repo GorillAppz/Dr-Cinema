@@ -23,10 +23,7 @@ const ShowtimeListItem = ({ time, url }) => {
 	};
 
 	return (
-		<TouchableOpacity
-			style={styles.pill}
-			onPress={onPressHandler}
-		>
+		<TouchableOpacity style={styles.pill} onPress={onPressHandler}>
 			<Text style={styles.text}>
 				{`${parsedTime} (${hall})`}
 			</Text>

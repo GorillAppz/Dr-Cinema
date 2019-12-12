@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
 	container: {
 		flex: 1,
-		paddingHorizontal: 20
+		paddingHorizontal: 20,
+		marginBottom: 25
 	},
 	plot: {
 		width: '100%',
@@ -11,5 +12,10 @@ export default StyleSheet.create({
 	},
 	bold: {
 		fontWeight: 'bold'
+	},
+	releaseDate: {
+		fontWeight: 'bold',
+		textTransform: 'uppercase',
+		fontStyle: 'italic'
 	}
 });

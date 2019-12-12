@@ -18,30 +18,24 @@ const formatDate = (date) => {
 const MovieList = ({ movies, isLoading, onItemPressHandler, showReleaseDate }) => {
 	return (
 		<View style={styles.container}>
-			{
-				isLoading ? <ActivityIndicator size="large" />
-					: (
-						<View style={styles.itemsContainer}>
-							{
-								movies.length ? movies.map((movie) => (
-									<MovieListItem
-										key={`${movie.id}_${movie.name}`}
-										title={movie.title}
-										poster={movie.poster}
-										releaseDate={showReleaseDate ? formatDate(movie['release-dateIS']) : movie.year}
-										genres={movie.genres}
-										trailerKey={movie.trailers.length > 0 && movie.trailers[0].results.length > 0
-											? movie.trailers[0].results[0].key
-											: 'https://www.example.com'}
-										showTrailerButton={movie.trailers !== undefined}
-										onPressHandler={() => onItemPressHandler(movie)}
-									/>
-								))
-									: <EmptyMovies />
-							}
-						</View>
-					)
-			}
+			{isLoading ? <ActivityIndicator size="large" />
+				: (
+					<View style={styles.itemsContainer}>
+						{
+							movies.length ? movies.map((movie) => (
+								<MovieListItem
+									key={`${movie.id}_${movie.name}`}
+									title={movie.title}
+									poster={movie.poster}
+									releaseDate={showReleaseDate ? formatDate(movie['release-dateIS']) : movie.year}
+									genres={movie.genres}
+									onPressHandler={() => onItemPressHandler(movie)}
+								/>
+							))
+								: <EmptyMovies />
+						}
+					</View>
+				)}
 		</View>
 	);
 };

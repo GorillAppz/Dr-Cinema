@@ -7,7 +7,7 @@ import styles from './styles';
 import { TouchableOpacity } from 'react-native';
 import { View } from 'react-native';
 
-const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, showTrailerButton, hasTrailer, trailerKey }) => (
+const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) => (
 	<View style={styles.container}>
 		<TouchableOpacity style={styles.touchContainer} onPress={onPressHandler}>
 			<Card
@@ -24,11 +24,14 @@ const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, sho
 				<View style={{ flex: 1, alignContent: 'stretch' }}>
 
 					<Text style={styles.text}>
-						{genres && genres.map((x, i) => {
-							if (x.Name !== undefined) {
-								return (i !== genres.length - 1 ? x.Name + ', ' : x.Name)
-							}
-						})}
+						{
+							genres.map((x, i) => {
+								if (x.Name !== undefined) {
+									return (i !== genres.length - 1 ? x.Name + ', ' : x.Name);
+								}
+								return null;
+							})
+						}
 					</Text>
 				</View>
 			</Card>

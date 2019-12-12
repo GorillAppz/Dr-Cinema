@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { DARK_GRAY, BLUE } from '../../styles/colors';
+import { DARK_GRAY } from '../../styles/colors';
 
 export default StyleSheet.create({
 	card: {
@@ -13,10 +13,5 @@ export default StyleSheet.create({
 	descriptionText: {
 		fontStyle: 'italic',
 		marginBottom: 20
-	},
-	linkText: {
-		color: BLUE,
-		fontStyle: 'italic',
-		textDecorationLine: 'underline'
 	}
 });

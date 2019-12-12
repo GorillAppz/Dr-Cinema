@@ -8,13 +8,7 @@ import styles from './styles';
 import ShowtimeListItem from '../ShowtimeListItem';
 
 const ShowtimeList = ({ showtimes }) => {
-	const icon = (
-		<Icon
-			name="ticket-alt"
-			color={ORANGE}
-			size={25}
-		/>
-	);
+	const icon = <Icon name="ticket-alt" color={ORANGE} size={25} />;
 
 	return (
 		<View style={styles.container}>
@@ -29,11 +23,7 @@ const ShowtimeList = ({ showtimes }) => {
 			<View style={styles.showtimesContainer}>
 				{
 					showtimes.map((st) => (
-						<ShowtimeListItem
-							key={st.time}
-							time={st.time}
-							url={st.purchase_url}
-						/>
+						<ShowtimeListItem key={st.time} time={st.time} url={st.purchase_url} />
 					))
 				}
 			</View>

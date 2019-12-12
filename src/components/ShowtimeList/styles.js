@@ -5,7 +5,7 @@ export default StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		marginVertical: 40,
+		marginBottom: 25
 	},
 	title: {
 		textAlign: 'center',

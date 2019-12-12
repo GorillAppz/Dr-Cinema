@@ -18,21 +18,23 @@ const MovieDetailContainer = ({ movie }) => {
 				duration={movie.durationMinutes}
 				genres={movie.genres}
 				altTitle={movie.alternativeTitles}
+				rating={movie.ratings ? movie.ratings.imdb : null}
 			/>
 			<MovieDetailBody
 				plot={movie.plot}
 				actors={movie.actors_abridged}
 				directors={movie.directors_abridged}
+				releaseDate={movie['release-dateIS']}
 			/>
-			{ movie.showtimes
+			{movie.showtimes
 				? (
 					<ShowtimeList showtimes={movie.showtimes} />
-				) : null }
+				) : null}
 
-			{ movie.trailers.length > 0 && movie.trailers[0].results.length > 0
+			{movie.trailers.length > 0 && movie.trailers[0].results.length > 0
 				? (
 					<TrailerList trailers={movie.trailers} />
-				) : null }
+				) : null}
 		</View>
 	);
 };

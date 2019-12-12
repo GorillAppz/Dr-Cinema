@@ -7,16 +7,25 @@ import styles from './styles';
 import Text from '../Text';
 import { BLACK, ORANGE } from '../../styles/colors';
 
-const MovieDetailHeader = ({ poster, title, altTitle, year, duration, genres }) => {
+const MovieDetailHeader = ({ poster, title, altTitle, year, duration, rating, genres, releaseDate }) => {
 	const altTitleText = altTitle ? (
 		<Text style={styles.altTitle}> ({altTitle}) </Text>
 	) : null;
 
 	const durationText = duration ? (
-		<View style={styles.durationContainer}>
+		<View style={styles.iconAndText}>
 			<Icon name="clock" color={ORANGE} size={18} />
 			<Text>
 				{` ${duration} mínútur`}
+			</Text>
+		</View>
+	) : null;
+
+	const ratingText = rating ? (
+		<View style={styles.iconAndText}>
+			<Icon name="imdb" color={ORANGE} size={25} />
+			<Text>
+				{` ${rating}`}
 			</Text>
 		</View>
 	) : null;
@@ -44,7 +53,13 @@ const MovieDetailHeader = ({ poster, title, altTitle, year, duration, genres }) 
 						<Text h3 style={styles.title}>{title}</Text>
 						{altTitleText}
 						<Text h4 style={styles.info}>{year}</Text>
-						{durationText}
+						{duration || rating ? (
+							<View style={styles.durationAndRatingContainer}>
+								{durationText}
+								{ratingText}
+							</View>
+						) : null
+						}
 					</View>
 				</LinearGradient>
 			</Image>

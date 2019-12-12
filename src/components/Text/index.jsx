@@ -4,14 +4,12 @@ import styles from './styles';
 import { nodeType, oneOfTypeType, objectType, arrayType } from '../../types/index';
 
 
-const CustomText = ({ children, style, ...props }) => {
+const CustomText = ({ children, style, ...props }) => (
+	<Text {...props} style={{ ...styles.text, ...style }}>
+		{children}
+	</Text>
+);
 
-	return (
-		<Text {...props} style={{ ...styles.text, ...style }}>
-			{children}
-		</Text>
-	);
-};
 
 CustomText.propTypes = {
 	children: nodeType,

@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import cinemaMoviesReducer from './cinemaMoviesReducer';
-import cinemasReducer from './cinemasReducer';
-import movieReducer from './movieReducer';
-import upcomingMoviesReducer from './upcomingMoviesReducer';
-import tokenReducer from './tokenReducer';
+import cinemaMovies from './cinemaMoviesReducer';
+import cinemas from './cinemasReducer';
+import movies from './moviesReducer';
+import upcomingMovies from './upcomingMoviesReducer';
+import token from './tokenReducer';
 
 export default combineReducers({
-	cinemaMovies: cinemaMoviesReducer,
-	cinemas: cinemasReducer,
-	movie: movieReducer,
-	upcomingMovies: upcomingMoviesReducer,
-	token: tokenReducer
+	cinemaMovies,
+	cinemas,
+	movies,
+	upcomingMovies,
+	token
 });
