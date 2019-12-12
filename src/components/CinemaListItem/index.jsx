@@ -6,7 +6,7 @@ import * as Animatable from 'react-native-animatable';
 
 import styles from './styles';
 import { BLACK, GRAY } from '../../styles/colors';
-import { cinemaType } from '../../types/index';
+import { cinemaType, numberType } from '../../types/index';
 
 const CinemaListItem = ({ cinema, index }) => {
 	const { navigate } = useNavigation();
@@ -44,7 +44,8 @@ const CinemaListItem = ({ cinema, index }) => {
 };
 
 CinemaListItem.propTypes = {
-	cinema: cinemaType
+	cinema: cinemaType,
+	index: numberType
 };
 
 export default CinemaListItem;

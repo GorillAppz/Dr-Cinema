@@ -6,7 +6,7 @@ import * as Animatable from 'react-native-animatable';
 
 import Text from '../Text';
 import styles from './styles';
-import { stringType, funcType, genresType } from '../../types/index';
+import { stringType, funcType, genresType, numberType } from '../../types/index';
 
 const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, index }) => (
 	<Animatable.View
@@ -50,7 +50,8 @@ MovieListItem.propTypes = {
 	poster: stringType,
 	releaseDate: stringType,
 	genres: genresType,
-	onPressHandler: funcType
+	onPressHandler: funcType,
+	index: numberType
 };
 
 export default MovieListItem;
