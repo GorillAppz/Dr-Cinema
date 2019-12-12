@@ -1,5 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { ORANGE } from '../../styles/colors';
+
+const window = Dimensions.get('window');
+const ratio = window.width / 675;
 
 export default StyleSheet.create({
 	container: {
@@ -10,7 +13,9 @@ export default StyleSheet.create({
 		justifyContent: 'flex-end'
 	},
 	image: {
-		height: 615
+		alignSelf: 'stretch',
+		width: window.width,
+		height: 1000 * ratio
 	},
 	textContainer: {
 		padding: '5%'
