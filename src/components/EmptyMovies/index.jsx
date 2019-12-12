@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Text from '../Text';
 
 import styles from './styles';
-import { GRAY } from '../../styles/colors'
+import { GRAY } from '../../styles/colors';
 
 const EmptyContacts = () => (
 	<View style={styles.container}>

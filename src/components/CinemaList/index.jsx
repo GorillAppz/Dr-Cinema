@@ -15,7 +15,6 @@ const CinemaList = () => {
 			keyExtractor={(item) => `${item.id}_${item.name}`}
 		/>
 	);
-
 };
 
 export default CinemaList;

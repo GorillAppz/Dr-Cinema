@@ -1,13 +1,11 @@
 import React from 'react';
 import { Card } from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Linking } from 'expo';
 
 import CinemaDetailInfoLink from '../CinemaDetailInfoLink';
 import Text from '../Text';
 import styles from './styles';
-
-import { ORANGE } from '../../styles/colors';
+import { cinemaType } from '../../types/index';
 
 const generateMapUrl = (address, city) => (
 	`http://maps.google.com/maps?daddr=${address}, ${city}`
@@ -20,7 +18,7 @@ const CinemaDetailInfo = ({ cinema }) => {
 		</Text>
 	) : null;
 
-	const addressText = cinema["address\t"] ? (
+	const addressText = cinema['address\t'] ? (
 		<CinemaDetailInfoLink
 			iconName="map-marker-alt"
 			onPressHandler={() => Linking.openURL(generateMapUrl(cinema['address\t'], cinema.city))}
@@ -55,6 +53,10 @@ const CinemaDetailInfo = ({ cinema }) => {
 			{websiteText}
 		</Card>
 	);
+};
+
+CinemaDetailInfo.propTypes = {
+	cinema: cinemaType
 };
 
 export default CinemaDetailInfo;

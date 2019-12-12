@@ -2,9 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-import Text from '../Text'
+import Text from '../Text';
 import TrailerListItem from '../TrailerListItem';
 import styles from './styles';
+import { trailersType } from '../../types';
 
 const TrailerList = ({ trailers }) => {
 	const icon = <Icon name="movie" iconStyle={styles.icon} size={30} containerStyle={styles.iconContainer} />;
@@ -25,6 +26,10 @@ const TrailerList = ({ trailers }) => {
 			</View>
 		</View>
 	);
+};
+
+TrailerList.propTypes = {
+	trailers: trailersType
 };
 
 export default TrailerList;

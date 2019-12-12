@@ -4,11 +4,11 @@ import { ORANGE } from '../../styles/colors';
 export default StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: 'center',
+		alignItems: 'center'
 	},
 	titleContainer: {
 		display: 'flex',
-		flexDirection: 'row',
+		flexDirection: 'row'
 	},
 	title: {
 		fontSize: 30,

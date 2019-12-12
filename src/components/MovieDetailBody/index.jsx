@@ -5,6 +5,7 @@ import 'moment/locale/is';
 
 import Text from '../Text';
 import styles from './styles';
+import { stringType, actorsType, directorsType } from '../../types/index';
 
 const formatDate = (date) => {
 	moment.locale('is');
@@ -15,7 +16,6 @@ const formatDate = (date) => {
 const parsePlot = (plot) => (plot.replace(/\n/g, ' '));
 
 const MovieDetailBody = ({ plot, actors, directors, releaseDate }) => {
-
 	const plotText = plot ? (
 		<Text h5 style={styles.plot}>
 			{parsePlot(plot)}
@@ -50,6 +50,13 @@ const MovieDetailBody = ({ plot, actors, directors, releaseDate }) => {
 			{directorsText}
 		</View>
 	);
+};
+
+MovieDetailBody.propTypes = {
+	plot: stringType,
+	actors: actorsType,
+	directors: directorsType,
+	releaseDate: stringType
 };
 
 export default MovieDetailBody;

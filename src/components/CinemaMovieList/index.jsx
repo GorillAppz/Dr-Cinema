@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { getMoviesByCinemaId } from '../../actions/cinemaMoviesActions';
 import MovieList from '../MovieList';
+import { numberType } from '../../types';
 
 
 const CinemaMovieList = ({ cinemaId }) => {
@@ -21,6 +22,10 @@ const CinemaMovieList = ({ cinemaId }) => {
 	return (
 		<MovieList movies={movies} isLoading={isLoading} onItemPressHandler={movieItemPressHandler} />
 	);
+};
+
+CinemaMovieList.propTypes = {
+	cinemaId: numberType.isRequired
 };
 
 export default CinemaMovieList;

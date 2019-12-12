@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import axios from 'axios';
 import config from '../../config';
 import * as constants from '../constants';
@@ -26,6 +27,8 @@ export const getAllUpcomingMovies = () => (dispatch, getState) => {
 			'X-ACCESS-TOKEN': getState().token.data
 		}
 	}).then((res) => {
+		// eslint-disable-next-line no-param-reassign
+		res.data.map((movie) => movie.omdb = '');
 		dispatch(getAllUpcomingMoviesSuccess(res.data));
 	}).catch((err) => {
 		console.log(err);

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
+import { TouchableOpacity, View } from 'react-native';
 
 import Text from '../Text';
-
 import styles from './styles';
-import { TouchableOpacity } from 'react-native';
-import { View } from 'react-native';
+import { stringType, funcType, genresType } from '../../types/index';
 
 const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) => (
 	<View style={styles.container}>
@@ -27,7 +26,7 @@ const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) =
 						{
 							genres.map((x, i) => {
 								if (x.Name !== undefined) {
-									return (i !== genres.length - 1 ? x.Name + ', ' : x.Name);
+									return (i !== genres.length - 1 ? `${x.Name}, ` : x.Name);
 								}
 								return null;
 							})
@@ -38,5 +37,13 @@ const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler }) =
 		</TouchableOpacity>
 	</View>
 );
+
+MovieListItem.propTypes = {
+	title: stringType,
+	poster: stringType,
+	releaseDate: stringType,
+	genres: genresType,
+	onPressHandler: funcType
+};
 
 export default MovieListItem;

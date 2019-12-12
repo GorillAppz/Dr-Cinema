@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { useNavigation } from 'react-navigation-hooks';
 
 import styles from './styles';
-import { funcType } from '../../types/index';
 import { ORANGE } from '../../styles/colors';
 
 const Footer = () => {
@@ -57,10 +56,6 @@ const Footer = () => {
 			) : <ActivityIndicator style={styles.activityIndicator} size="large" />}
 		</View>
 	);
-};
-
-Footer.propTypes = {
-	navigationHandler: funcType
 };
 
 export default Footer;

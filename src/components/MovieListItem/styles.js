@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { DARK_GRAY, BLACK } from '../../styles/colors';
+import { BLACK } from '../../styles/colors';
 
 export default StyleSheet.create({
 	container: {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
-import { NavigationActions } from 'react-navigation';
+import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';

@@ -6,6 +6,7 @@ import Text from '../Text';
 import { ORANGE } from '../../styles/colors';
 import styles from './styles';
 import ShowtimeListItem from '../ShowtimeListItem';
+import { ShowTimesType } from '../../types';
 
 const ShowtimeList = ({ showtimes }) => {
 	const icon = <Icon name="ticket-alt" color={ORANGE} size={25} />;
@@ -29,6 +30,10 @@ const ShowtimeList = ({ showtimes }) => {
 			</View>
 		</View>
 	);
+};
+
+ShowtimeList.propTypes = {
+	showtimes: ShowTimesType
 };
 
 export default ShowtimeList;

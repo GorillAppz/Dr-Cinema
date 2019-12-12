@@ -5,6 +5,7 @@ import { useNavigation } from 'react-navigation-hooks';
 
 import styles from './styles';
 import { BLACK, GRAY } from '../../styles/colors';
+import { cinemaType } from '../../types/index';
 
 const CinemaListItem = ({ cinema }) => {
 	const { navigate } = useNavigation();
@@ -33,6 +34,10 @@ const CinemaListItem = ({ cinema }) => {
 			chevron={{ color: 'white' }}
 		/>
 	);
+};
+
+CinemaListItem.propTypes = {
+	cinema: cinemaType
 };
 
 export default CinemaListItem;

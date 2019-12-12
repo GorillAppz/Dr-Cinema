@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { Linking } from 'expo';
 import { TouchableOpacity } from 'react-native';
-import styles from './styles';
 
+import styles from './styles';
 import Text from '../Text';
+import { stringType } from '../../types/index';
 
 const parseTime = (time) => {
 	const timeAndHall = time.split(' ');
@@ -13,9 +13,7 @@ const parseTime = (time) => {
 	return [parsedTime, hall];
 };
 
-
 const ShowtimeListItem = ({ time, url }) => {
-
 	const [parsedTime, hall] = parseTime(time);
 
 	const onPressHandler = () => {
@@ -29,6 +27,11 @@ const ShowtimeListItem = ({ time, url }) => {
 			</Text>
 		</TouchableOpacity>
 	);
+};
+
+ShowtimeListItem.propTypes = {
+	time: stringType,
+	url: stringType
 };
 
 export default ShowtimeListItem;
