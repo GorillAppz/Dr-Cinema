@@ -27,9 +27,9 @@ const MovieListItem = ({ title, poster, releaseDate, genres, onPressHandler, ind
 				imageWrapperStyle={styles.cardImageWrapper}
 				wrapperStyle={styles.cardWrapper}
 			>
-				<View style={{ flex: 1, alignContent: 'stretch' }}>
+				<View style={styles.textContainer}>
 
-					<Text style={styles.text}>
+					<Text style={styles.text} numberOfLines={3}>
 						{
 							genres.map((x, i) => {
 								if (x.Name !== undefined) {

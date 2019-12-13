@@ -35,6 +35,10 @@ export default StyleSheet.create({
 		display: 'flex',
 		flex: 1
 	},
+	textContainer: {
+		flex: 1,
+		alignContent: 'stretch'
+	},
 	text: {
 		color: 'white',
 		fontSize: 10,
