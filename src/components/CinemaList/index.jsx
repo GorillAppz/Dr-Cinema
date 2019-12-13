@@ -13,6 +13,7 @@ const CinemaList = () => {
 				({ item, index }) => <CinemaListItem cinema={item} index={index} />
 			}
 			keyExtractor={(item) => `${item.id}_${item.name}`}
+			initialNumToRender={cinemas.length}
 		/>
 	);
 };
