@@ -30,7 +30,7 @@ const Footer = () => {
 							<Icon
 								type="font-awesome"
 								name="camera-retro"
-								size={15}
+								size={20}
 								color={index === 1 ? ORANGE : 'white'}
 							/>
 						)}
@@ -44,7 +44,7 @@ const Footer = () => {
 							<Icon
 								type="font-awesome"
 								name="film"
-								size={15}
+								size={20}
 								color={index === 2 ? ORANGE : 'white'}
 							/>
 						)}

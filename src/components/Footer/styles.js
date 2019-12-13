@@ -4,7 +4,7 @@ import { BLACK } from '../../styles/colors';
 export default StyleSheet.create({
 	container: {
 		backgroundColor: BLACK,
-		height: 65,
+		height: 75,
 		justifyContent: 'center'
 	},
 	body: {
@@ -17,6 +17,6 @@ export default StyleSheet.create({
 		backgroundColor: BLACK
 	},
 	title: {
-		fontSize: 9
+		fontSize: 12
 	}
 });
