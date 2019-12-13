@@ -17,7 +17,7 @@ const CinemaListItem = ({ cinema, index }) => {
 
 	return (
 		<Animatable.View
-			animation="fadeInLeft"
+			animation="fadeIn"
 			delay={50 * index}
 			useNativeDriver
 		>
