@@ -40,7 +40,8 @@ export default StyleSheet.create({
 		fontSize: 10,
 		flexGrow: 1,
 		margin: 5,
-		textAlign: 'center'
+		textAlign: 'center',
+		width: '100%'
 	},
 	empty: {
 		opacity: 0
