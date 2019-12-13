@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigation } from 'react-navigation-hooks';
 import { useSelector, useDispatch } from 'react-redux';
+import * as Animatable from 'react-native-animatable';
 
 import { getMoviesByCinemaId } from '../../actions/cinemaMoviesActions';
 import MovieList from '../MovieList';
@@ -20,7 +21,12 @@ const CinemaMovieList = ({ cinemaId }) => {
 	const movieItemPressHandler = (movie) => navigate('Movie', { movie });
 
 	return (
-		<MovieList movies={movies} isLoading={isLoading} onItemPressHandler={movieItemPressHandler} />
+		<Animatable.View
+			animation="fadeInUp"
+			useNativeDriver
+		>
+			<MovieList movies={movies} isLoading={isLoading} onItemPressHandler={movieItemPressHandler} />
+		</Animatable.View>
 	);
 };
 
