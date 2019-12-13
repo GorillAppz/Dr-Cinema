@@ -39,7 +39,7 @@ export default StyleSheet.create({
 		color: 'white',
 		fontSize: 10,
 		flexGrow: 1,
-		margin: 5,
+		padding: 5,
 		textAlign: 'center',
 		width: '100%'
 	},
